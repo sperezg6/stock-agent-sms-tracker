@@ -56,7 +56,8 @@ jobs:
         continue-on-error: true
       
       - name: Deploy to AWS
-        run: cdk deploy --require-approval never --all \
+        run: |
+          cdk deploy --require-approval never \
             --context twilioAccountSid="${{ secrets.TWILIO_ACCOUNT_SID }}" \
             --context twilioAuthToken="${{ secrets.TWILIO_AUTH_TOKEN }}" \
             --context toPhoneNumber="${{ secrets.TO_PHONE_NUMBER }}" \
