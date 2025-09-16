@@ -13,6 +13,7 @@ auth_token = os.environ.get("AUTH_TOKEN")
 to_phone_number = os.environ.get("TO_PHONE_NUMBER")
 from_phone_number = os.environ.get("FROM_PHONE_NUMBER")
 finnhub_api_key = os.environ.get("FINNHUB_API_KEY")
+client = Client(account_sid, auth_token)
 
 
 class StockPriceResponse(BaseModel):
