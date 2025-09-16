@@ -38,10 +38,10 @@ def get_stock_price(symbol: str) -> StockPriceResponse:
         Exception: If API call fails or returns invalid data
     """
     # Initialize Finnhub client with API key from .env
-    api_key = os.getenv('FINHUB_API_KEY')
+    api_key = os.getenv('FINNHUB_API_KEY')
     if not api_key:
-        raise ValueError("FINHUB_API_KEY not found in .env file")
-    
+        raise ValueError("FINNHUB_API_KEY not found in .env file")
+
     finnhub_client = finnhub.Client(api_key=api_key)
     
     try:

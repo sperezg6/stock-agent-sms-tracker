@@ -70,14 +70,13 @@ jobs:
       - name: Get Lambda Function URL
         run: |
           echo "Lambda Function deployed successfully!"
-          aws lambda get-function --function-name test-hello-world-lambda --query 'Configuration.FunctionArn' --output text
-      
+          aws lambda get-function --function-name stock-agent-tracks-lambda --query 'Configuration.FunctionArn' --output text
+
       - name: Test Lambda Function
         run: |
           echo "Testing Lambda function..."
           aws lambda invoke \
-            --function-name test-hello-world-lambda \
-            --payload '{"queryStringParameters": {"name": "GitHub Actions"}}' \
+            --function-name stock-agent-tracks-lambda \
             response.json
           cat response.json
           echo ""
