@@ -13,6 +13,6 @@ stock_research_agent = Agent(
     send_stock_sms,
     get_tracker_list_tool
   ],
-  model="gpt-4.1"
+  model="gpt-4.1-mini"
 )
 

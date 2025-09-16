@@ -8,5 +8,5 @@ async def main():
     print(result.final_output)
 
 
-if __name__ == "__main__":
+def handler(event, context):
     asyncio.run(main())

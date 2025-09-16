@@ -1,20 +1,19 @@
 import finnhub
 import os
 from pydantic import BaseModel
-from dotenv import load_dotenv
 from typing import Optional
 import time
 import json
 from agents import function_tool
 from twilio.rest import Client
 
-load_dotenv()
 
-account_sid = os.getenv("ACCOUNT_SID")
-auth_token = os.getenv("AUTH_TOKEN")
-to_phone_number = os.getenv("TO_PHONE_NUMBER")
-from_phone_number = os.getenv("FROM_PHONE_NUMBER")
-client = Client(account_sid, auth_token)
+account_sid = os.environ.get("ACCOUNT_SID")
+auth_token = os.environ.get("AUTH_TOKEN")
+to_phone_number = os.environ.get("TO_PHONE_NUMBER")
+from_phone_number = os.environ.get("FROM_PHONE_NUMBER")
+finnhub_api_key = os.environ.get("FINNHUB_API_KEY")
+
 
 class StockPriceResponse(BaseModel):
     current_price: float
