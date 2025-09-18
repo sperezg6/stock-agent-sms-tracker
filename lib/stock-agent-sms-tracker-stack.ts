@@ -64,12 +64,11 @@ export class StockAgentSmsTrackerStack extends cdk.Stack {
     const weekdayRule = new events.Rule(this, 'WeekdayMorningRule', {
       ruleName: 'stock-agent-weekday-8am-rule',
       description: 'Trigger stock agent Lambda every weekday at 8 AM',
-      schedule: events.Schedule.expression('cron(0 8 ? * MON-FRI *)'),
+      schedule: events.Schedule.expression('cron(0 16 ? * MON-FRI *)'),
     });
 
      // Add Lambda as target for the EventBridge rule
     weekdayRule.addTarget(new targets.LambdaFunction(stockAgentSmsTrackerFunction, {
-      retryAttempts: 2,
       maxEventAge: cdk.Duration.hours(2)
     }));
 
