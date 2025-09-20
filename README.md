@@ -284,4 +284,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you found this project helpful, please give it a ⭐️ on GitHub!
 
-For questions or support, please open an issue or contact [your-email@example.com](mailto:your-email@example.com).
+For questions or support, please open an issue or contact [spg1824@gmail.com](mailto:spg1824@gmail.com]).
